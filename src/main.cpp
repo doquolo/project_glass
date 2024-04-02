@@ -78,15 +78,15 @@ void loop() {
   // light intensity
   float lux = lightMeter.readLightLevel();
   int lux_int = (int)lux;
-  Serial.print("Light: ");
-  Serial.print(lux_int);
-  Serial.println(" lx");
+  // Serial.print("Light: ");
+  // Serial.print(lux_int);
+  // Serial.println(" lx");
   // distance
   int distance = sensor.readRangeContinuousMillimeters();
-  Serial.print("Distance: ");
-  Serial.print(distance);
+  // Serial.print("Distance: ");
+  // Serial.print(distance);
   if (sensor.timeoutOccurred()) { Serial.print(" TIMEOUT"); }
-  Serial.println();
+  // Serial.println();
   // send data via bluetooth when device connected (saving battery)
   if (deviceConnected) {
     String data_str = String(lux_int) + ";" + String(distance);
@@ -106,5 +106,5 @@ void loop() {
       oldDeviceConnected = deviceConnected;
   }
   // delay
-  delay(150);
+  delay(100);
 }
